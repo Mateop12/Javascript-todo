@@ -1,0 +1,267 @@
+body {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url('https://blog.villagehouse.jp/wp-content/webp-express/webp-images/uploads/2022/03/Japanese-Books-1024x683.jpeg.webp');
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad aquí */
+    z-index: -1;
+}
+
+header {
+    background-color: rgba(75, 80, 85, 0.8); /* Ajusta la opacidad aquí */
+    color: rgb(244, 237, 237);
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ed3f6b;
+}
+
+button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+.sidebar {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 72px;
+    height: 100%;
+    background: #048480;
+    transition: width 0.4s;
+  }
+  
+  body.open .sidebar {
+    width: 260px;
+  }
+  
+  .sidebar-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+  
+  .sidebar-header {
+    display: flex;
+    align-items: center;
+    height: 72px;
+    padding: 0 1.25rem 0 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar-burger {
+    width: 72px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    background: url(./assets/icon-burger.svg) no-repeat center center;
+    transition: 0.3s;
+  }
+  
+  body.open .sidebar-burger {
+    background: url(./assets/icon-close.svg) no-repeat center center;
+  }
+  
+  .sidebar-logo {
+    height: 20px;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  
+  body.open .sidebar-logo {
+    opacity: 1;
+  }
+  
+  .sidebar-nav {
+    padding-top: 10px;
+    flex: 1 1 auto;
+  }
+  
+  .sidebar button {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    height: 50px;
+    width: 72px;
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    line-height: 1;
+    padding: 0 25px;
+  }
+  
+  .sidebar button > img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .sidebar button > span {
+    color: #f9f9f9;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      translate: 0 10px;
+    }
+    100% {
+      opacity: 1;
+      translate: 0;
+    }
+  }
+  
+  body.open .sidebar button > span {
+    opacity: 1;
+    animation: appear 0.3s both;
+  }
+  
+
+main {
+    display: flex;
+    margin: 20px;
+}
+
+#book-list {
+    margin-left: 80px;
+    flex: 2;
+}
+
+.book, #cart {
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Ajusta la opacidad aquí */
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Ajusta la opacidad aquí */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book:hover, #cart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.book h3 {
+    margin-top: 0;
+}
+
+.book p {
+    color: rgba(0, 0, 0, 0.8); /* Ajusta la opacidad del texto */
+}
+
+.book button, #cart-items li button {
+    background-color: rgba(40, 167, 69, 0.9); /* Ajusta la opacidad aquí */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.book button:hover, #cart-items li button:hover {
+    background-color: rgba(33, 136, 56, 0.9); /* Ajusta la opacidad aquí */
+    transform: translateY(-2px);
+}
+
+#cart {
+    flex: 1;
+    margin-left: 20px;
+}
+
+#cart h2 {
+    margin-top: 0;
+}
+
+#cart-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Ajusta la opacidad aquí */
+}
+
+#cart-items li button {
+    background-color: rgba(220, 53, 69, 0.9); /* Ajusta la opacidad aquí */
+}
+
+#cart-items li button:hover {
+    background-color: rgba(200, 35, 51, 0.9); /* Ajusta la opacidad aquí */
+}
+
+.modal {
+  padding-top: 100px;
+}
+
+.pago {
+  background-color: rgba(255, 193, 7, 0.9); /* Ajusta la opacidad aquí */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pago button:hover {
+  background-color: rgba(33, 136, 56, 0.9); /* Ajusta la opacidad aquí */
+  transform: translateY(-2px);
+}
+
+#checkout {
+  background-color: rgba(255, 255, 255, 0.9); /* Ajusta la opacidad aquí */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 80px;
+}

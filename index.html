@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="assets/iconowl.png">
+    <title>Bienvenido a Mundos Entre Líneas</title>
+</head>
+
+<body>
+    <div class="container-form sign-up">
+        <div class="welcome-back">
+            <div class="message">
+                <h2>Mundos Entre Líneas</h2>
+                <p>Si ya tienes una cuenta por favor inicia sesion aqui</p>
+                <button class="sign-up-btn">Iniciar Sesion</button>
+            </div>
+        </div>
+        <form  id="registro" class="formulario">
+            <h2 class="create-account">Registro</h2>
+            <p class="cuenta-gratis">Crear una cuenta gratis</p>
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="contraseña" placeholder="Contraseña" required>
+            <input type="password" id="confirmar-contraseña" placeholder="Repetir Contraseña" required style="margin-bottom: 10px !important; ">
+            <button type="submit" class="sign-up-btn">Registrarse</button>
+        </form>
+    </div>
+    <div class="container-form sign-in">
+        <form id="formulario" class="formulario">
+            <h2 class="create-account">Iniciar Sesion</h2>
+            <p class="cuenta-gratis">¿Aun no tienes una cuenta?</p>
+            <input id="emaillogin" type="email" placeholder="Email" required>
+            <input id="password" type="password" placeholder="Contraseña" required>
+            <button type="submit" class="sign-up-btn">Iniciar Sesión</button>
+        </form>
+        <div class="welcome-back">
+            <div class="message">
+                <h2>Bienvenido</h2>
+                <p>Si aun no tienes una cuenta por favor registrese aqui</p>
+                <button class="sign-in-btn">Registrarse</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

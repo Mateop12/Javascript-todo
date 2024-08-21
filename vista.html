@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mundos Entre Líneas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="assets/iconowl.png">
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <header class="sidebar-header">
+          <button type="button" class="sidebar-burger" onclick="toggleSidebar()">
+          </button>
+          <img src="./assets/blocklord-logo.png" class="sidebar-logo" />
+        </header>
+        <nav class="sidebar-nav">
+          <button type="button" onclick="window.location.href='vista.html'">
+            <img src="./assets/home.svg" />
+            <span>Inicio</span>
+          </button>
+          <button type="button" onclick="window.location.href='compras.html'">
+            <img src="./assets/shop.svg" /> 
+            <span style="animation-delay: 0.2s">Compras</span>
+          </button>
+          <button type="button">
+            <img src="./assets/user.svg" />
+            <span style="animation-delay: 0.3s">Cuenta</span>
+          </button>
+          <button type="button">
+            <img src="./assets/config.svg" />
+            <span style="animation-delay: 0.1s">Configuración</span>
+          </button>
+        </nav>
+        
+        <footer class="sidebar-footer">
+          <button type="button" onclick="logout()">
+            <img src="./assets/logout.svg" />
+            <span>Salir</span>
+          </button>
+        </footer>
+      </div>
+    </aside>
+    <main>
+      <div class="panel">
+        <h1>Diario del Lector</h1>
+        <h2>Añadir nuevo libro</h2>
+        <div>
+            <form id="form" class="form">
+                <label class="label" for="title">Título</label>
+                <input type="text" id="title" name="title" placeholder="Titulo">
+
+                <label class="label" for="author">Autor</label>
+                <input type="text" id="author" name="author" placeholder="Autor">
+
+                <label class="label" for="comment">Comentario</label>
+                <input type="text" id="comment" name="comment" placeholder="Comentario">
+
+                <button type="submit" id="add" class="saveBtn">Guardar</button>
+
+            </form>
+        </div>
+
+        <i id="msg" class="msg"></i>
+
+        <h3>&#x1F538; Mis Libros &#x1F538;</h3>
+
+        <div class="container">
+            <div id="card" class="card">
+                <div>
+
+                </div>
+            </div>
+        </div>
+
+        <dialog class="modal" id="modal">
+            <p>¡Se ha eliminado el elemento seleccionado!</p>
+            <button class="closeBtn" id="closeBtn">Continuar</button>
+        </dialog> 
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
